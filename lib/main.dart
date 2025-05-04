@@ -58,8 +58,7 @@ class MyHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-                
+                Favorite(),
               ],
             ),
             Padding(
@@ -112,4 +111,24 @@ class Season extends StatelessWidget {
   }
 }
 
+class Favorite extends StatefulWidget {
+  const Favorite({super.key});
 
+  @override
+  State<Favorite> createState() => _FavoriteState();
+}
+
+class _FavoriteState extends State<Favorite> {
+  bool clicked = false;
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        setState(() {
+          clicked = !clicked;
+        });
+      },
+      icon: Icon(Icons.favorite, color: clicked ? Colors.red : Colors.grey),
+    );
+  }
+}
