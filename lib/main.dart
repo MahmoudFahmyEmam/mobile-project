@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_mobile_project/firstScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: "title", body: "body"),
+      home: const FirstScreen(),
     );
   }
 }
@@ -58,7 +58,8 @@ class MyHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.favorite))
+                IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
+                
               ],
             ),
             Padding(
@@ -110,4 +111,5 @@ class Season extends StatelessWidget {
     );
   }
 }
+
 
